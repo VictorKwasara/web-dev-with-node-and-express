@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 app.engine('handlebars', expressHandlebars({
   defaultLayout: 'main',
 }))
-
+app.use(express.static(`${__dirname}/public`))
 app.set('view engine', 'handlebars')
 
 app.get('/', (req,res) => {
